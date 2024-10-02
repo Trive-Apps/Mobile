@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/btn_rectangle"
+    android:backgroundTint="@color/backgroundSecondary">
+
+    <View
+        android:id="@+id/top_divider"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/fillTertiary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/initial"
+        style="@style/TextLarge_Bold"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/bg_circle"
+        android:backgroundTint="@color/textTertiary"
+        android:gravity="center"
+        android:text="Aa"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/fullname"
+        style="@style/TextBase_Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fullname"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toEndOf="@+id/initial"
+        app:layout_constraintTop_toTopOf="@+id/initial" />
+
+    <View
+        android:id="@+id/circle_divider"
+        android:layout_width="2dp"
+        android:layout_height="2dp"
+        android:background="@drawable/btn_circle"
+        android:backgroundTint="@color/textSecondary"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/fullname"
+        app:layout_constraintTop_toTopOf="@+id/fullname"
+        app:layout_constraintBottom_toBottomOf="@+id/fullname"/>
+
+    <TextView
+        android:id="@+id/timestamp"
+        style="@style/TextBase_Regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0s"
+        android:textColor="@color/textSecondary"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/circle_divider"
+        app:layout_constraintTop_toTopOf="@+id/initial" />
+
+    <LinearLayout
+        android:id="@+id/container_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="76dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toEndOf="@+id/initial"
+        app:layout_constraintTop_toBottomOf="@+id/fullname">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/container_img_news"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/photo_url"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/img_placeholder_slider"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/status"
+            style="@style/TextBase_Regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Lorem ipsum" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/post_actions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginStart="76dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/container_status"
+        app:layout_constraintStart_toEndOf="@+id/initial"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/like_icon"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_heart"
+            app:tint="@color/textSecondary"/>
+
+        <TextView
+            style="@style/TextSmall_Regular"
+            android:id="@+id/total_like"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="@color/textSecondary"
+            android:layout_marginStart="6dp"/>
+
+        <ImageView
+            android:id="@+id/comment_icon"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_chats"
+            app:tint="@color/textSecondary" />
+
+        <TextView
+            style="@style/TextSmall_Regular"
+            android:id="@+id/total_comment"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="@color/textSecondary"
+            android:layout_marginStart="6dp"/>
+
+        <ImageView
+            android:id="@+id/bookmark_icon"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_bookmark"
+            app:tint="@color/textSecondary" />
+
+        <TextView
+            style="@style/TextSmall_Regular"
+            android:id="@+id/total_bookmark"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="@color/textSecondary"
+            android:layout_marginStart="6dp"/>
+
+        <ImageView
+            android:id="@+id/share_icon"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_share"
+            app:tint="@color/textSecondary" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/bottom_divider"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#1A000000"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/post_actions"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

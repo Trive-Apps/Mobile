@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/community"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundSecondary"
+    tools:context=".fragment.CommunityFragment" >
+
+    <!-- Navbar -->
+    <LinearLayout
+        android:id="@+id/navbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingVertical="14dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="9dp"
+        android:background="@color/backgroundPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            style="@style/TextExtraLarge_Medium"
+            android:id="@+id/title_navbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="16dp"
+            android:text="Komunitas"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end">
+
+            <ImageButton
+                android:id="@+id/btn_search"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:padding="7dp"
+                android:src="@drawable/ic_search"
+                android:background="@drawable/btn_circle"
+                android:backgroundTint="@color/backgroundPrimary"
+                app:tint="@color/textSecondary"/>
+
+            <ImageButton
+                android:id="@+id/btn_more"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:padding="7dp"
+                android:src="@drawable/ic_menu"
+                android:background="@drawable/btn_circle"
+                android:backgroundTint="@color/backgroundPrimary"
+                app:tint="@color/textSecondary"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/navbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/post_share"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/btn_rectangle"
+                android:backgroundTint="@color/backgroundPrimary"
+                android:focusable="true"
+                android:clickable="true">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/fillTertiary" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/initial"
+                        style="@style/TextLarge_Bold"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_circle"
+                        android:backgroundTint="@color/primary700"
+                        android:gravity="center"
+                        android:text="Aa"
+                        android:textColor="@color/white"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <EditText
+                        android:id="@+id/et_post"
+                        style="@style/CommunityEditTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="82dp"
+                        android:layout_marginStart="60dp"
+                        android:gravity="start"
+                        android:backgroundTint="@color/fillTertiary"
+                        android:hint="Yuk sharing disini..."
+                        android:textColorHint="@color/textSecondary"
+                        android:inputType="textMultiLine"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="10dp"
+                        app:layout_constraintStart_toEndOf="@+id/initial"
+                        app:layout_constraintTop_toTopOf="@+id/initial" />
+
+                    <ImageButton
+                        android:id="@+id/btn_image"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:background="@drawable/btn_circle"
+                        android:backgroundTint="@android:color/transparent"
+                        android:padding="7dp"
+                        android:src="@drawable/ic_image_filled"
+                        app:tint="@color/primary400"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginStart="12dp"
+                        app:layout_constraintStart_toEndOf="@+id/initial"
+                        app:layout_constraintTop_toBottomOf="@+id/et_post" />
+
+                    <ImageButton
+                        android:id="@+id/btn_expression"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:background="@drawable/btn_circle"
+                        android:backgroundTint="@android:color/transparent"
+                        android:padding="7dp"
+                        android:src="@drawable/ic_expression_filled"
+                        app:tint="@color/secondary400"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintStart_toEndOf="@+id/btn_image"
+                        app:layout_constraintTop_toBottomOf="@+id/et_post" />
+
+                    <ImageButton
+                        android:id="@+id/btn_camera"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:background="@drawable/btn_circle"
+                        android:backgroundTint="@android:color/transparent"
+                        android:padding="7dp"
+                        android:src="@drawable/ic_camera_filled"
+                        app:tint="#FF4692D4"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintStart_toEndOf="@+id/btn_expression"
+                        app:layout_constraintTop_toBottomOf="@+id/et_post" />
+
+                    <android.widget.Button
+                        android:id="@+id/btn_share"
+                        style="@style/TextSmall_Medium"
+                        android:layout_width="wrap_content"
+                        android:minWidth="0dp"
+                        android:layout_height="38dp"
+                        android:background="@drawable/btn_rounded"
+                        android:letterSpacing="0"
+                        android:outlineProvider="none"
+                        android:text="Bagikan"
+                        android:textAllCaps="false"
+                        android:textColor="@color/backgroundSecondary"
+                        android:paddingHorizontal="16dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/et_post" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/fillTertiary" />
+
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:id="@+id/filter_community"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="10dp">
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/TextSmall_Medium"
+                        android:id="@+id/btn_all"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="7dp"
+                        android:textAllCaps="false"
+                        android:letterSpacing="0"
+                        android:outlineProvider="none"
+                        android:text="Semua"
+                        android:textColor="@color/backgroundSecondary"
+                        android:backgroundTint="@color/primary400"
+                        app:cornerRadius="10dp"
+                        android:layout_marginEnd="8dp"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/TextSmall_Regular"
+                        android:id="@+id/btn_general"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="7dp"
+                        android:textAllCaps="false"
+                        android:letterSpacing="0"
+                        android:outlineProvider="none"
+                        android:text="Umum"
+                        android:textColor="@color/textSecondary"
+                        android:backgroundTint="@color/fillQuaternary"
+                        app:cornerRadius="10dp"
+                        android:layout_marginEnd="8dp"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/TextSmall_Regular"
+                        android:id="@+id/btn_activity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="7dp"
+                        android:textAllCaps="false"
+                        android:letterSpacing="0"
+                        android:outlineProvider="none"
+                        android:text="Kegiatan"
+                        android:textColor="@color/textSecondary"
+                        android:backgroundTint="@color/fillQuaternary"
+                        app:cornerRadius="10dp"
+                        android:layout_marginEnd="8dp"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/TextSmall_Regular"
+                        android:id="@+id/btn_information"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="7dp"
+                        android:textAllCaps="false"
+                        android:letterSpacing="0"
+                        android:outlineProvider="none"
+                        android:text="Informasi"
+                        android:textColor="@color/textSecondary"
+                        android:backgroundTint="@color/fillQuaternary"
+                        app:cornerRadius="10dp"
+                        android:layout_marginEnd="8dp"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        style="@style/TextSmall_Regular"
+                        android:id="@+id/btn_tips_n_trick"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="7dp"
+                        android:textAllCaps="false"
+                        android:letterSpacing="0"
+                        android:outlineProvider="none"
+                        android:text="Tips &amp; Trik"
+                        android:textColor="@color/textSecondary"
+                        android:backgroundTint="@color/fillQuaternary"
+                        app:cornerRadius="10dp"/>
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="209dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_community"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/adapter_community"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ProgressBar
+                    android:id="@+id/progress_bar"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="16dp"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    android:indeterminateTint="@color/primary400"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/primary400"
+        android:src="@drawable/ic_plus"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="140dp"
+        tools:layout_marginBottom="20dp"
+        app:borderWidth="0dp"
+        app:elevation="0dp"
+        android:visibility="gone"
+        app:fabCustomSize="56dp"
+        app:maxImageSize="24dp"
+        app:rippleColor="#26000000"
+        app:tint="@color/backgroundPrimary"
+        app:shapeAppearance="?attr/shapeAppearanceOverlay"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

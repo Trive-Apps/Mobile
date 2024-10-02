@@ -1,0 +1,18 @@
+<resources>
+
+    <style name="Base.Theme.TRIVESCI" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary400</item>
+        <item name="colorOnPrimary">@color/textPrimary</item>
+        <item name="colorPrimaryVariant">@color/primary400</item>
+        <item name="android:textAppearance">@style/TextBase_Regular</item>
+        <item name="android:textColor">@color/textPrimary</item>
+        <item name="android:textColorHint">@color/textTertiary</item>
+        <item name="android:textColorHighlight">@color/primary200</item>
+        <item name="android:fontFamily">@font/font_family</item>
+        <item name="android:statusBarColor">@color/backgroundSecondary</item>
+        <item name="android:navigationBarColor">@color/backgroundSecondary</item>
+        <item name="android:textCursorDrawable">@drawable/caret_color</item>
+    </style>
+
+    <style name="Theme.TRIVESCI" parent="Base.Theme.TRIVESCI" />
+</resources>

@@ -1,0 +1,4 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/et_rounded_border_active" android:state_focused="true" />
+    <item android:drawable="@drawable/et_rounded_border_inactive" />
+</selector>

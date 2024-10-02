@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/splash"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundSecondary"
+    tools:context=".activity.SplashActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/img_trive_logo"
+        android:adjustViewBounds="true"
+        android:layout_centerInParent="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="16dp">
+
+        <ProgressBar
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:indeterminateTint="@color/primary400"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            style="@style/TextSmall_Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PT SUCOFINDO"
+            android:layout_marginBottom="4dp"
+            android:textColor="@color/textSecondary"/>
+
+        <TextView
+            style="@style/TextBase_SemiBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SCIence HACKFEST 2024"/>
+    </LinearLayout>
+
+</RelativeLayout>

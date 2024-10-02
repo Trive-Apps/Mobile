@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/selector_home"
+        android:title="Beranda" />
+
+    <item
+        android:id="@+id/navigation_station"
+        android:icon="@drawable/selector_station"
+        android:title="Stasiun" />
+
+    <item
+        android:id="@+id/navigation_community"
+        android:icon="@drawable/selector_community"
+        android:title="Komunitas" />
+
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/selector_profile"
+        android:title="Profil" />
+</menu>

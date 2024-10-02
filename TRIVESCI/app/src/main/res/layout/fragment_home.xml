@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundSecondary"
+    tools:context=".fragment.HomeFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/car"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="82dp"
+                android:background="#FFDEDEE4">
+
+                <ImageView
+                    android:id="@+id/img_brand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="22dp"
+                    tools:src="@drawable/img_bmw"
+                    android:adjustViewBounds="true"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/car_type"
+                    style="@style/Heading5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="BMW I3"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="2dp"
+                    app:layout_constraintStart_toEndOf="@+id/img_brand"
+                    app:layout_constraintTop_toTopOf="@+id/img_brand"
+                    app:layout_constraintBottom_toBottomOf="@+id/img_brand"/>
+
+                <TextView
+                    android:id="@+id/is_active"
+                    style="@style/TextExtraSmall_Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Inactive"
+                    android:paddingVertical="4dp"
+                    android:visibility="invisible"
+                    tools:visibility="visible"
+                    android:paddingHorizontal="12dp"
+                    android:background="@drawable/bg_circle"
+                    android:backgroundTint="@color/primary300"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/img_brand"/>
+
+                <ImageView
+                    android:id="@+id/ic_battery"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_battery_full"
+                    app:tint="@color/primary400"
+                    android:visibility="invisible"
+                    tools:visibility="visible"
+                    android:layout_marginTop="22dp"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/is_active"/>
+
+                <TextView
+                    android:id="@+id/battery_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TextExtraSmall_Medium"
+                    android:text="Baterai"
+                    android:visibility="invisible"
+                    tools:visibility="visible"
+                    android:layout_marginStart="6dp"
+                    app:layout_constraintTop_toTopOf="@+id/ic_battery"
+                    app:layout_constraintStart_toEndOf="@+id/ic_battery"
+                    app:layout_constraintBottom_toBottomOf="@+id/ic_battery"/>
+
+                <TextView
+                    android:id="@+id/battery"
+                    style="@style/Heading1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="100"
+                    android:visibility="invisible"
+                    tools:visibility="visible"
+                    android:textSize="48sp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="-6dp"
+                    android:paddingBottom="6dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ic_battery"/>
+
+                <TextView
+                    android:id="@+id/percent"
+                    style="@style/Heading6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="%"
+                    android:visibility="invisible"
+                    tools:visibility="visible"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginBottom="14dp"
+                    app:layout_constraintStart_toEndOf="@+id/battery"
+                    app:layout_constraintBottom_toBottomOf="@id/battery"/>
+
+                <ImageView
+                    android:id="@+id/img_car"
+                    android:layout_width="wrap_content"
+                    android:layout_height="158dp"
+                    tools:src="@drawable/img_bmw_i3_electric"
+                    android:adjustViewBounds="true"
+                    android:layout_marginStart="146dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <ProgressBar
+                    android:id="@+id/progress_bar"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:indeterminateTint="@color/primary400"
+                    android:layout_marginBottom="16dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingBottom="136dp">
+
+                <LinearLayout
+                    android:id="@+id/money_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/bg_rounded_primary_stroke"
+                    android:paddingVertical="10dp"
+                    android:paddingHorizontal="16dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginHorizontal="16dp"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/img_point"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="8dp">
+
+                        <TextView
+                            android:id="@+id/money"
+                            style="@style/TextBase_SemiBold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Rp0"
+                            android:textColor="@color/textPrimary"/>
+                        a
+                        <TextView
+                            android:id="@+id/point"
+                            style="@style/TextExtraSmall_Regular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0 Point"
+                            android:textColor="@color/textSecondary"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="end">
+
+                        <ImageButton
+                            android:id="@+id/btn_barcode"
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:padding="7dp"
+                            android:src="@drawable/ic_barcode"
+                            android:background="@drawable/btn_circle"
+                            android:backgroundTint="@color/backgroundPrimary"
+                            app:tint="@color/primary400"/>
+
+                        <ImageButton
+                            android:id="@+id/btn_add"
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:padding="7dp"
+                            android:src="@drawable/ic_plus_circle"
+                            android:background="@drawable/btn_circle"
+                            android:backgroundTint="@color/backgroundPrimary"
+                            app:tint="@color/textSecondary"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/features"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginHorizontal="24dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/money_container">
+
+                    <LinearLayout
+                        android:id="@+id/btn_timeline"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:contentDescription="@null"
+                            android:src="@drawable/img_timeline" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/inter_medium"
+                            android:textAlignment="center"
+                            android:textColor="@color/textPrimary"
+                            style="@style/TextExtraSmall_Regular"
+                            android:text="Linimasa" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btn_battery"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:contentDescription="@null"
+                            android:src="@drawable/img_battery" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/inter_medium"
+                            android:textAlignment="center"
+                            android:textColor="@color/textPrimary"
+                            style="@style/TextExtraSmall_Regular"
+                            android:text="Baterai" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btn_reservation"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:contentDescription="@null"
+                            android:src="@drawable/img_reservation" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/inter_medium"
+                            android:textAlignment="center"
+                            android:textColor="@color/textPrimary"
+                            style="@style/TextExtraSmall_Regular"
+                            android:text="Reservasi" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btn_partner"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:contentDescription="@null"
+                            android:src="@drawable/img_partner" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/inter_medium"
+                            android:textAlignment="center"
+                            android:textColor="@color/textPrimary"
+                            style="@style/TextExtraSmall_Regular"
+                            android:text="Mitra" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="16dp"
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginHorizontal="16dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintTop_toBottomOf="@+id/features">
+
+                    <org.imaginativeworld.whynotimagecarousel.ImageCarousel
+                        android:id="@+id/carousel"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        tools:background="@color/primary400"
+                        app:showTopShadow="false"
+                        app:showBottomShadow="false"
+                        app:showCaption="false"
+                        app:showIndicator="false"
+                        app:imagePlaceholder="@drawable/img_placeholder_slider"
+                        app:showNavigationButtons="false"
+                        app:autoPlay="true"
+                        app:autoPlayDelay="3000"
+                        app:infiniteCarousel="true"
+                        app:touchToPause="true"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayout"/>
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- Navbar -->
+    <LinearLayout
+        android:id="@+id/navbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingVertical="14dp"
+        android:paddingEnd="9dp"
+        android:paddingStart="16dp"
+        android:background="#FFDEDEE4"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="88dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_trive"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="38dp"
+                android:layout_height="38dp">
+
+                <ImageButton
+                    android:id="@+id/btn_notification"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:padding="7dp"
+                    android:src="@drawable/ic_notification"
+                    android:background="@drawable/btn_circle"
+                    android:backgroundTint="#FFDEDEE4"
+                    app:tint="@color/textSecondary"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:background="@drawable/bg_circle"
+                    android:text="7"
+                    style="@style/TextExtraSmall_Bold"
+                    android:textSize="10dp"
+                    android:gravity="center"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginEnd="1dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:textColor="@color/white"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageButton
+                android:id="@+id/btn_menu"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:padding="7dp"
+                android:src="@drawable/ic_menu"
+                android:background="@drawable/btn_circle"
+                android:backgroundTint="#FFDEDEE4"
+                app:tint="@color/textSecondary"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/fillSecondary"
+        app:layout_constraintTop_toBottomOf="@id/navbar"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

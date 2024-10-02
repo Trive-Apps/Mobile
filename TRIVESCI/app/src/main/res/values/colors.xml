@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Background Colors -->
+    <color name="backgroundPrimary">#FFFFFFFF</color>
+    <color name="backgroundSecondary">#FFF2F2F7</color>
+
+    <!-- Text Colors -->
+    <color name="textPrimary">#FF000000</color>
+    <color name="textSecondary">#993C3C43</color>
+    <color name="textTertiary">#4D3C3C43</color>
+    <color name="textQuaternary">#2E3C3C43</color>
+
+    <!-- Fill Colors -->
+    <color name="fillPrimary">#33787880</color>
+    <color name="fillSecondary">#29787880</color>
+    <color name="fillTertiary">#1F767680</color>
+    <color name="fillQuaternary">#14747480</color>
+
+    <!-- Primary Colors -->
+    <color name="primary50">#FFF5FAF3</color>
+    <color name="primary100">#FFE6F4E4</color>
+    <color name="primary200">#FFCFE8CA</color>
+    <color name="primary300">#FFA8D5A0</color>
+    <color name="primary400">#FF71B465</color>
+    <color name="primary500">#FF579C4B</color>
+    <color name="primary600">#FF448039</color>
+    <color name="primary700">#FF376530</color>
+    <color name="primary800">#FF2F512A</color>
+    <color name="primary900">#FF284324</color>
+    <color name="primary950">#FF11240F</color>
+
+    <!-- Secondary Colors -->
+    <color name="secondary50">#FFFFF8EB</color>
+    <color name="secondary100">#FFFEEAC7</color>
+    <color name="secondary200">#FFFDD28A</color>
+    <color name="secondary300">#FFFCBB4D</color>
+    <color name="secondary400">#FFFBAB24</color>
+    <color name="secondary500">#FFF59E0B</color>
+    <color name="secondary600">#FFD98B06</color>
+    <color name="secondary700">#FFB47409</color>
+    <color name="secondary800">#FF92610E</color>
+    <color name="secondary900">#FF78510F</color>
+    <color name="secondary950">#FF452C03</color>
+
+    <!-- Others -->
+    <color name="backgroundLogo">#FFFFFFFF</color>
+    <color name="separator_no_transparency">#FFC6C6C8</color>
+    <color name="system_red">#FFFF3B30</color>
+    <color name="system_red_light">#29FF3B30</color>
+    <color name="system_green_light">#2971B465</color>
+</resources>

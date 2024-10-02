@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/battery"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/backgroundSecondary"
+    tools:context=".activity.BatteryActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Navbar -->
+        <LinearLayout
+            android:id="@+id/navbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingVertical="14dp"
+            android:paddingHorizontal="9dp"
+            android:background="@color/backgroundPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:padding="7dp"
+                android:src="@drawable/ic_left"
+                android:background="@drawable/btn_circle"
+                android:backgroundTint="@color/backgroundPrimary"
+                app:tint="@color/textSecondary"
+                android:layout_marginEnd="10dp"/>
+
+            <TextView
+                style="@style/TextExtraLarge_Medium"
+                android:id="@+id/title_navbar"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textColor="@color/textPrimary"
+                android:layout_marginEnd="16dp"
+                android:text="Baterai"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="end">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="38dp"
+                    android:layout_height="38dp">
+
+                    <ImageButton
+                        android:id="@+id/btn_notification"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:padding="7dp"
+                        android:src="@drawable/ic_notification"
+                        android:background="@drawable/btn_circle"
+                        android:backgroundTint="@color/backgroundPrimary"
+                        app:tint="@color/textSecondary"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <TextView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:background="@drawable/bg_circle"
+                        android:text="7"
+                        style="@style/TextExtraSmall_Bold"
+                        android:textSize="10dp"
+                        android:gravity="center"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginEnd="1dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:textColor="@color/white"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <ImageButton
+                    android:id="@+id/btn_menu"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:padding="7dp"
+                    android:src="@drawable/ic_menu"
+                    android:background="@drawable/btn_circle"
+                    android:backgroundTint="@color/backgroundPrimary"
+                    app:tint="@color/textSecondary"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginTop="8dp"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/current_battery"
+                    style="@style/Heading4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/total_battery"
+                    style="@style/Heading4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="/0.0 kWh"
+                    android:textColor="@color/textTertiary"
+                    app:layout_constraintStart_toEndOf="@+id/current_battery"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/progress_battery_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="0dp"
+                    android:layout_marginTop="6dp"
+                    app:layout_constraintTop_toBottomOf="@id/current_battery">
+
+                    <ProgressBar
+                        android:id="@+id/percent_progress_battery"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        style="?android:progressBarStyleHorizontal"
+                        android:scaleY="6"
+                        android:progressDrawable="@drawable/progress_bar_high"/>
+
+                </androidx.cardview.widget.CardView>
+
+                <ImageView
+                    android:id="@+id/ic_battery"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_battery_empty"
+                    app:tint="@color/primary400"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/progress_battery_layout"/>
+
+                <TextView
+                    android:id="@+id/percent_battery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TextExtraSmall_Medium"
+                    android:text="0% Tersedia"
+                    android:layout_marginStart="6dp"
+                    app:layout_constraintTop_toTopOf="@+id/ic_battery"
+                    app:layout_constraintStart_toEndOf="@+id/ic_battery"
+                    app:layout_constraintBottom_toBottomOf="@+id/ic_battery"/>
+
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/fillSecondary"
+                    android:layout_marginVertical="12dp"
+                    app:layout_constraintTop_toBottomOf="@id/percent_battery"/>
+
+                <LinearLayout
+                    android:id="@+id/linear_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    app:layout_constraintTop_toBottomOf="@id/divider">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/TextExtraSmall_Regular"
+                            android:textColor="@color/textSecondary"
+                            android:text="Tegangan"
+                            android:textAlignment="center"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_marginTop="4dp">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginEnd="4dp"
+                                android:src="@drawable/ic_voltage"
+                                app:tint="@color/secondary400" />
+
+                            <TextView
+                                android:id="@+id/voltage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/TextLarge_SemiBold"
+                                android:text="0 V" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_rounded"
+                        android:backgroundTint="@color/fillSecondary"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/TextExtraSmall_Regular"
+                            android:textColor="@color/textSecondary"
+                            android:text="Arus"
+                            android:textAlignment="center"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_marginTop="4dp">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginEnd="4dp"
+                                android:src="@drawable/ic_current"
+                                app:tint="@color/secondary400" />
+                            <TextView
+                                android:id="@+id/current"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/TextLarge_SemiBold"
+                                android:text="0 A" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_rounded"
+                        android:backgroundTint="@color/fillSecondary"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/rating_total"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/TextExtraSmall_Regular"
+                            android:textColor="@color/textSecondary"
+                            android:text="Suhu"
+                            android:textAlignment="center"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_marginTop="4dp">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginEnd="4dp"
+                                android:src="@drawable/ic_temp"
+                                app:tint="@color/secondary400" />
+                            <TextView
+                                android:id="@+id/temp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/TextLarge_SemiBold"
+                                android:text="0°C" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/divider2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/fillSecondary"
+                    android:layout_marginVertical="12dp"
+                    app:layout_constraintTop_toBottomOf="@id/linear_layout"/>
+
+                <LinearLayout
+                    android:id="@+id/battery_health_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_rounded"
+                    app:layout_constraintTop_toTopOf="@+id/divider2"
+                    android:layout_marginTop="16dp"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        style="@style/TextBase_Regular"
+                        android:text="State of Charge (SoC)"
+                        android:textColor="@color/textSecondary"
+                        app:layout_constraintTop_toTopOf="@+id/divider2"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <TextView
+                        style="@style/TextBase_SemiBold"
+                        android:id="@+id/battery_health"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0%"
+                        android:visibility="gone"
+                        app:layout_constraintTop_toTopOf="@+id/divider2"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <ProgressBar
+                        android:id="@+id/battery_progress"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:indeterminateTint="@color/primary400"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@drawable/ic_info"
+                    android:layout_marginTop="7.5dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/battery_health_container"
+                    app:tint="@color/textSecondary" />
+
+                <TextView
+                    style="@style/TextExtraSmall_Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ini adalah ukuran kapasitas baterai yang bersifat relatif terhadap kondisi kendaraan listrik Anda."
+                    android:textColor="@color/textSecondary"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintTop_toBottomOf="@+id/battery_health_container"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

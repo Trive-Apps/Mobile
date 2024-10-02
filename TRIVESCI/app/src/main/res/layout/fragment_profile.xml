@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/profile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundSecondary"
+    tools:context=".fragment.ProfileFragment" >
+
+    <View
+        android:id="@+id/bg_profile"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@color/primary400"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- Navbar -->
+    <LinearLayout
+        android:id="@+id/navbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingVertical="14dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="9dp"
+        android:background="@color/primary400"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            style="@style/TextExtraLarge_Medium"
+            android:id="@+id/title_navbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="16dp"
+            android:textColor="@color/white"
+            android:text="Profil"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end">
+
+            <ImageButton
+                android:id="@+id/btn_more"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:padding="7dp"
+                android:src="@drawable/ic_menu"
+                android:background="@drawable/btn_circle"
+                app:tint="@color/white"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/initial"
+        style="@style/Heading1"
+        android:fontFamily="@font/inter_bold"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@drawable/bg_circle_border"
+        android:layout_marginTop="-60dp"
+        tools:text="Aa"
+        android:textColor="@color/backgroundSecondary"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bg_profile"/>
+
+    <TextView
+        android:id="@+id/fullname"
+        style="@style/Heading5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="12dp"
+        tools:text="Aldi Perdana Asri"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@+id/initial"/>
+
+    <TextView
+        android:id="@+id/mail"
+        style="@style/TextBase_Regular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="2dp"
+        tools:text="admin@trive.com"
+        android:textColor="@color/textSecondary"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@+id/fullname"/>
+
+    <LinearLayout
+        android:id="@+id/container_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/mail">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/bg_rounded_stroke"
+            android:clickable="false"
+            android:layout_weight="1"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="16dp">
+
+            <ImageView
+                android:id="@+id/record_container"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:padding="7dp"
+                android:background="@drawable/bg_circle"
+                android:backgroundTint="@color/primary100"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_car_filled"
+                app:tint="@color/primary400"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/record_title"
+                style="@style/TextExtraSmall_Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="KENDARAAN"
+                android:textColor="@color/textSecondary"
+                android:layout_marginTop="6dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/total_record"
+                style="@style/Heading4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BMW"
+                android:textColor="@color/textPrimary"
+                android:layout_marginTop="4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/record_title" />
+
+            <TextView
+                style="@style/TextSmall_Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I3"
+                android:textColor="@color/textPrimary"
+                android:layout_marginLeft="6dp"
+                android:layout_marginBottom="3dp"
+                app:layout_constraintBottom_toBottomOf="@+id/total_record"
+                app:layout_constraintStart_toEndOf="@+id/total_record" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:background="@drawable/bg_rounded_stroke"
+            android:clickable="false"
+            android:layout_weight="1"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="16dp">
+
+            <ImageView
+                android:id="@+id/user_container"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:padding="7dp"
+                android:background="@drawable/bg_circle"
+                android:backgroundTint="@color/secondary100"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_user_filled"
+                app:tint="@color/secondary400"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/user_title"
+                style="@style/TextExtraSmall_Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BERGABUNG"
+                android:textColor="@color/textSecondary"
+                android:layout_marginTop="6dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/month_user"
+                style="@style/Heading4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Okt"
+                android:textColor="@color/textPrimary"
+                android:layout_marginTop="4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/user_title" />
+
+            <TextView
+                android:id="@+id/year_user"
+                style="@style/TextSmall_Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2024"
+                android:textColor="@color/textPrimary"
+                android:layout_marginLeft="6dp"
+                android:layout_marginBottom="3dp"
+                app:layout_constraintBottom_toBottomOf="@+id/month_user"
+                app:layout_constraintStart_toEndOf="@+id/month_user" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/account"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="10dp"
+        android:layout_marginTop="12dp"
+        android:gravity="center_vertical"
+        android:background="@drawable/btn_rectangle"
+        android:backgroundTint="@color/backgroundSecondary"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintTop_toBottomOf="@+id/container_layout">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_user"
+            app:tint="@color/primary400"
+            android:layout_marginEnd="12dp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginEnd="24dp">
+
+            <TextView
+                style="@style/TextBase_Medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Akun"/>
+
+            <TextView
+                style="@style/TextExtraSmall_Regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Informasi Akun • Kata Sandi • Verifikasi Nomor Telepon"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@color/textSecondary"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_caret_right"
+            app:tint="@color/textTertiary"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/display"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="10dp"
+        android:gravity="center_vertical"
+        android:background="@drawable/btn_rectangle"
+        android:backgroundTint="@color/backgroundSecondary"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintTop_toBottomOf="@+id/account">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_sun"
+            app:tint="@color/primary400"
+            android:layout_marginEnd="12dp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginEnd="24dp">
+
+            <TextView
+                style="@style/TextBase_Medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tampilan"/>
+
+            <TextView
+                style="@style/TextExtraSmall_Regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Kecerahan • Mode Gelap • Ukuran Font"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@color/textSecondary"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_caret_right"
+            app:tint="@color/textTertiary"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="10dp"
+        android:gravity="center_vertical"
+        android:background="@drawable/btn_rectangle"
+        android:backgroundTint="@color/backgroundSecondary"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintTop_toBottomOf="@+id/display">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_headset"
+            app:tint="@color/primary400"
+            android:layout_marginEnd="12dp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginEnd="24dp">
+
+            <TextView
+                style="@style/TextBase_Medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Layanan"/>
+
+            <TextView
+                style="@style/TextExtraSmall_Regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Pengaduan • Paling Sering Ditanya • Info Lainnya"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@color/textSecondary"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_caret_right"
+            app:tint="@color/textTertiary"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="16dp"
+        android:gravity="center_vertical"
+        android:background="@drawable/btn_rectangle"
+        android:backgroundTint="@color/backgroundSecondary"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginBottom="120dp"
+        tools:layout_marginBottom="0dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_logout"
+            app:tint="@color/system_red"
+            android:layout_marginEnd="12dp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginEnd="24dp">
+
+            <TextView
+                style="@style/TextBase_Medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Keluar"
+                android:textColor="@color/system_red"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_caret_right"
+            app:tint="@color/textTertiary"/>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

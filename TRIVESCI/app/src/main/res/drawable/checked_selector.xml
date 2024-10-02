@@ -1,0 +1,4 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/ic_checkbox_filled" android:state_checked="true" android:tint="@color/primary400" />
+    <item android:drawable="@drawable/ic_checkbox_filled" android:state_checked="false" android:tint="@android:color/transparent" />
+</selector>

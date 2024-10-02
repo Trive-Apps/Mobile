@@ -1,0 +1,767 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".MainActivity"
+    android:background="@color/backgroundSecondary">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/backgroundPrimary">
+
+        <ImageView
+            android:id="@+id/trive_logo"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:src="@drawable/img_trive_single_logo"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+        
+        <LinearLayout
+            android:id="@+id/trive_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toEndOf="@+id/trive_logo"
+            app:layout_constraintTop_toTopOf="@+id/trive_logo"
+            app:layout_constraintBottom_toBottomOf="@+id/trive_logo">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                android:src="@drawable/img_trive"
+                android:adjustViewBounds="true"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="4dp"/>
+            
+            <TextView
+                style="@style/TextExtraSmall_Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Green Living"
+                android:textColor="@color/primary400"/>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/fillPrimary"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/trive_name"/>
+
+        <LinearLayout
+            android:id="@+id/btn_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_rounded"
+            android:backgroundTint="@color/primary50"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="16dp"
+            android:paddingVertical="6dp"
+            android:paddingHorizontal="12dp"
+            android:gravity="start|center"
+            app:layout_constraintTop_toBottomOf="@+id/divider">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_home"
+                app:tint="@color/primary400"
+                android:layout_marginEnd="10dp"/>
+            
+            <TextView
+                style="@style/TextBase_SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Beranda"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/master"
+            style="@style/TextExtraSmall_Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MASTER"
+            android:textColor="@color/textTertiary"
+            android:layout_marginTop="20dp"
+            android:paddingStart="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/btn_home"/>
+
+        <LinearLayout
+            android:id="@+id/btn_overview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_rounded"
+            android:backgroundTint="@color/backgroundPrimary"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="16dp"
+            android:paddingVertical="6dp"
+            android:paddingHorizontal="12dp"
+            android:gravity="start|center"
+            app:layout_constraintTop_toBottomOf="@+id/master">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_folder_chart"
+                app:tint="@color/textSecondary"
+                android:layout_marginEnd="10dp"/>
+
+            <TextView
+                style="@style/TextBase_Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Overview"
+                android:textColor="@color/textSecondary"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_overview_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_rounded"
+            android:backgroundTint="@color/backgroundPrimary"
+            android:layout_marginTop="4dp"
+            android:layout_marginHorizontal="16dp"
+            android:paddingVertical="6dp"
+            android:paddingHorizontal="12dp"
+            android:gravity="start|center"
+            app:layout_constraintTop_toBottomOf="@+id/btn_overview">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_folder_1"
+                app:tint="@color/textSecondary"
+                android:layout_marginEnd="10dp"/>
+
+            <TextView
+                style="@style/TextBase_Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Laporan Bulanan"
+                android:textColor="@color/textSecondary"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_overview_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_rounded"
+            android:backgroundTint="@color/backgroundPrimary"
+            android:layout_marginTop="4dp"
+            android:layout_marginHorizontal="16dp"
+            android:paddingVertical="6dp"
+            android:paddingHorizontal="12dp"
+            android:gravity="start|center"
+            app:layout_constraintTop_toBottomOf="@+id/btn_overview_1">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_folder_3"
+                app:tint="@color/textSecondary"
+                android:layout_marginEnd="10dp"/>
+
+            <TextView
+                style="@style/TextBase_Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Laporan Triwulan"
+                android:textColor="@color/textSecondary"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_overview_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_rounded"
+            android:backgroundTint="@color/backgroundPrimary"
+            android:layout_marginTop="4dp"
+            android:layout_marginHorizontal="16dp"
+            android:paddingVertical="6dp"
+            android:paddingHorizontal="12dp"
+            android:gravity="start|center"
+            app:layout_constraintTop_toBottomOf="@+id/btn_overview_2">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_folder_12"
+                app:tint="@color/textSecondary"
+                android:layout_marginEnd="10dp"/>
+
+            <TextView
+                style="@style/TextBase_Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Laporan Tahunan"
+                android:textColor="@color/textSecondary"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/other"
+            style="@style/TextExtraSmall_Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LAINNYA"
+            android:textColor="@color/textTertiary"
+            android:layout_marginTop="20dp"
+            android:paddingStart="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/btn_overview_3"/>
+
+        <LinearLayout
+            android:id="@+id/btn_setting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_rounded"
+            android:backgroundTint="@color/backgroundPrimary"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="16dp"
+            android:paddingVertical="6dp"
+            android:paddingHorizontal="12dp"
+            android:gravity="start|center"
+            app:layout_constraintTop_toBottomOf="@+id/other">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_settings"
+                app:tint="@color/textSecondary"
+                android:layout_marginEnd="10dp"/>
+
+            <TextView
+                style="@style/TextBase_Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pengaturan"
+                android:textColor="@color/textSecondary"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_help"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_rounded"
+            android:backgroundTint="@color/backgroundPrimary"
+            android:layout_marginTop="4dp"
+            android:layout_marginHorizontal="16dp"
+            android:paddingVertical="6dp"
+            android:paddingHorizontal="12dp"
+            android:gravity="start|center"
+            app:layout_constraintTop_toBottomOf="@+id/btn_setting">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_customer_service"
+                app:tint="@color/textSecondary"
+                android:layout_marginEnd="10dp"/>
+
+            <TextView
+                style="@style/TextBase_Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bantuan"
+                android:textColor="@color/textSecondary"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_create_station"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_margin="16dp"
+            android:gravity="center"
+            android:background="@drawable/btn_rounded_dash"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:src="@drawable/ic_plus_circle"
+                app:tint="@color/primary400"
+                android:padding="12dp"
+                android:background="@drawable/bg_circle"
+                android:backgroundTint="@color/primary100"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextBase_SemiBold"
+                android:text="Tambah SPKLU"
+                android:layout_marginBottom="4dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TextExtraSmall_Regular"
+                    android:text="atau import"
+                    android:textColor="@color/textSecondary"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TextExtraSmall_SemiBold"
+                    android:text="file"
+                    android:layout_marginStart="3dp"
+                    android:textColor="@color/primary400"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/fillPrimary"
+        android:layout_marginStart="-1dp"/>
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="15.5dp"
+            android:paddingHorizontal="24dp"
+            android:gravity="center"
+            android:background="@color/backgroundPrimary">
+
+            <ImageView
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:src="@drawable/img_user_placeholder"/>
+
+            <LinearLayout
+                android:layout_marginStart="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TextBase_SemiBold"
+                    android:layout_marginTop="1dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Aldi Perdana Asri"/>
+
+                <TextView
+                    style="@style/TextExtraSmall_Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Selamat datang kembali di Trive"
+                    android:textColor="@color/textSecondary"/>
+
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="end">
+
+                <ImageButton
+                    android:id="@+id/btn_search"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:padding="7dp"
+                    android:src="@drawable/ic_search"
+                    android:background="@drawable/btn_circle"
+                    android:backgroundTint="@color/backgroundPrimary"
+                    app:tint="@color/textSecondary"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginEnd="16dp">
+
+                    <ImageButton
+                        android:id="@+id/btn_notification"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:padding="7dp"
+                        android:src="@drawable/ic_notification"
+                        android:background="@drawable/btn_circle"
+                        android:backgroundTint="@color/backgroundPrimary"
+                        app:tint="@color/textSecondary"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <TextView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:background="@drawable/bg_circle"
+                        android:text="7"
+                        style="@style/TextExtraSmall_Bold"
+                        android:textSize="10dp"
+                        android:gravity="center"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginEnd="1dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:textColor="@color/white"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <android.widget.Button
+                    android:id="@+id/btn_add"
+                    style="@style/TextBase_Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:background="@drawable/btn_rounded"
+                    android:textColor="@color/backgroundPrimary"
+                    android:outlineProvider="none"
+                    android:text="Tambah"
+                    android:drawableStart="@drawable/ic_add"
+                    android:drawableTint="@color/backgroundPrimary"
+                    android:drawablePadding="8dp"
+                    android:textAllCaps="false"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="16dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="-0.5dp"
+            android:background="@color/fillPrimary"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="24dp"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_building"
+                        app:tint="@color/primary400"/>
+
+                    <TextView
+                        style="@style/TextLarge_SemiBold"
+                        android:layout_marginTop="1dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PT SUCOFINDO"
+                        android:layout_marginStart="10dp"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:gravity="end">
+
+                        <TextView
+                            style="@style/TextBase_Medium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Triwulan"
+                            android:textColor="@color/textSecondary"
+                            android:background="@drawable/btn_rounded_left"
+                            android:paddingHorizontal="16dp"
+                            android:paddingVertical="6dp" />
+
+                        <TextView
+                            style="@style/TextBase_Medium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="-1dp"
+                            android:text="Okt-Des 2024"
+                            android:textColor="@color/textSecondary"
+                            android:background="@drawable/btn_rounded_right"
+                            android:paddingHorizontal="16dp"
+                            android:paddingVertical="6dp"
+                            android:layout_marginEnd="10dp"/>
+
+                        <android.widget.Button
+                            android:id="@+id/btn_download_data"
+                            style="@style/TextBase_Medium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:background="@drawable/btn_rounded_sec"
+                            android:textColor="@color/primary400"
+                            android:outlineProvider="none"
+                            android:text="Unduh Data SPKLU"
+                            android:drawableStart="@drawable/ic_file_download"
+                            android:drawableTint="@color/primary400"
+                            android:drawablePadding="8dp"
+                            android:textAllCaps="false"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="16dp"/>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="24dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_rounded_stroke"
+                        android:paddingTop="14dp"
+                        android:paddingEnd="14dp"
+                        android:paddingBottom="16dp"
+                        android:paddingStart="24dp"
+                        android:layout_marginEnd="16dp">
+
+                        <TextView
+                            android:id="@+id/station_total"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/TextSmall_SemiBold"
+                            android:text="TOTAL SPKLU"
+                            android:layout_marginTop="10dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/station"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/Heading1"
+                            android:text="0"
+                            android:layout_marginTop="12dp"
+                            app:layout_constraintTop_toBottomOf="@+id/station_total"
+                            app:layout_constraintStart_toStartOf="parent"/>
+
+                        <ImageView
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:padding="9dp"
+                            android:background="@drawable/bg_circle"
+                            android:backgroundTint="@color/primary100"
+                            android:src="@drawable/ic_gas_station"
+                            app:tint="@color/primary400"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_rounded_stroke"
+                        android:paddingTop="14dp"
+                        android:paddingEnd="14dp"
+                        android:paddingBottom="16dp"
+                        android:paddingStart="24dp"
+                        android:layout_marginEnd="16dp">
+
+                        <TextView
+                            android:id="@+id/station_active"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/TextSmall_SemiBold"
+                            android:text="AKTIF"
+                            android:layout_marginTop="10dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/active"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/Heading1"
+                            android:text="0"
+                            android:layout_marginTop="12dp"
+                            app:layout_constraintTop_toBottomOf="@+id/station_active"
+                            app:layout_constraintStart_toStartOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/active_end"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/Heading1"
+                            android:text="/0"
+                            android:textColor="@color/textTertiary"
+                            android:layout_marginTop="12dp"
+                            app:layout_constraintTop_toBottomOf="@+id/station_active"
+                            app:layout_constraintStart_toEndOf="@+id/active"/>
+
+                        <ImageView
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:padding="9dp"
+                            android:background="@drawable/bg_circle"
+                            android:backgroundTint="#FFDBEAFE"
+                            android:src="@drawable/ic_verified_badge"
+                            app:tint="#FF60A5FA"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_rounded_stroke"
+                        android:paddingTop="14dp"
+                        android:paddingEnd="14dp"
+                        android:paddingBottom="16dp"
+                        android:paddingStart="24dp">
+
+                        <TextView
+                            android:id="@+id/station_inactive"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/TextSmall_SemiBold"
+                            android:text="NON-AKTIF"
+                            android:layout_marginTop="10dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/inactive"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/Heading1"
+                            android:text="0"
+                            android:layout_marginTop="12dp"
+                            app:layout_constraintTop_toBottomOf="@+id/station_inactive"
+                            app:layout_constraintStart_toStartOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/inactive_end"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/Heading1"
+                            android:text="/0"
+                            android:textColor="@color/textTertiary"
+                            android:layout_marginTop="12dp"
+                            app:layout_constraintTop_toBottomOf="@+id/station_inactive"
+                            app:layout_constraintStart_toEndOf="@+id/inactive"/>
+
+                        <ImageView
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:padding="9dp"
+                            android:background="@drawable/bg_circle"
+                            android:backgroundTint="#FFFEE2E2"
+                            android:src="@drawable/ic_close_circle"
+                            app:tint="#FFF87171"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginHorizontal="24dp">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="320dp"
+                        android:layout_weight="2.055"
+                        app:cardCornerRadius="10dp"
+                        android:background="@drawable/bg_rounded"
+                        app:cardElevation="0dp"
+                        android:layout_marginEnd="16dp">
+
+                        <fragment
+                            android:id="@+id/map"
+                            android:name="com.google.android.gms.maps.SupportMapFragment"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_rounded_stroke"
+                        android:paddingTop="24dp">
+
+                        <TextView
+                            android:id="@+id/station_data"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/TextSmall_SemiBold"
+                            android:text="DATA SPKLU"
+                            android:paddingHorizontal="24dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"/>
+
+                        <View
+                            android:id="@+id/divider2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/fillSecondary"
+                            android:layout_marginTop="12dp"
+                            app:layout_constraintTop_toBottomOf="@+id/station_data"/>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_station"
+                            android:layout_width="match_parent"
+                            android:layout_height="261dp"
+                            android:layout_marginHorizontal="24dp"
+                            app:layout_constraintTop_toBottomOf="@id/divider2"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:listitem="@layout/adapter_station"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>

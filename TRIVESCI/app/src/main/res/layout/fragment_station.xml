@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.StationFragment">
+
+    <!-- Map Fragment -->
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/search_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_circle"
+        android:backgroundTint="@color/backgroundPrimary"
+        android:paddingStart="16dp"
+        android:paddingEnd="9dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        tools:layout_marginTop="16dp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_point_location"
+            android:layout_marginEnd="10dp"/>
+
+        <EditText
+            android:id="@+id/search_station"
+            style="@style/TextBase_Regular"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:gravity="center_vertical"
+            android:layout_weight="1"
+            android:hint="Cari stasiun pengisian disini..."
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="@color/textPrimary"
+            android:textColorHint="@color/textTertiary"
+            android:textColorHighlight="@color/secondary200"
+            android:textCursorDrawable="@drawable/caret_color_secondary"
+            android:background="@null"
+            android:padding="0dp"/>
+
+        <ImageView
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:padding="7dp"
+            android:src="@drawable/ic_search"
+            android:background="@drawable/btn_circle"
+            android:backgroundTint="@color/backgroundPrimary"
+            app:tint="@color/textTertiary"/>
+
+    </LinearLayout>
+
+    <!-- Detail -->
+    <LinearLayout
+        android:id="@+id/container_popup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_rounded"
+        android:backgroundTint="@color/backgroundPrimary"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:visibility="invisible"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="136dp"
+        tools:layout_marginBottom="16dp"
+        tools:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/station_name"
+            style="@style/TextBase_Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="SPKLU ..."
+            android:textColor="@color/textPrimary" />
+
+        <TextView
+            android:id="@+id/address"
+            style="@style/TextExtraSmall_Regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textSecondary"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:text="Lokasi SPKLU" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start|center"
+            android:layout_marginTop="6dp">
+
+            <TextView
+                android:id="@+id/is_open"
+                style="@style/TextExtraSmall_Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Buka"
+                android:textColor="@color/primary400"
+                android:drawablePadding="2.5dp"/>
+
+            <TextView
+                style="@style/TextExtraSmall_Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="•"
+                android:textSize="6dp"
+                android:layout_marginHorizontal="5dp"
+                android:textColor="@color/textSecondary"/>
+
+            <TextView
+                style="@style/TextExtraSmall_Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5.0"
+                android:textColor="@color/secondary400"
+                android:drawableStart="@drawable/ic_small_star_filled"
+                android:drawableTint="@color/secondary400"
+                android:drawablePadding="2.5dp"/>
+
+            <TextView
+                style="@style/TextExtraSmall_Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="•"
+                android:textSize="6dp"
+                android:layout_marginHorizontal="5dp"
+                android:textColor="@color/textSecondary"/>
+
+            <TextView
+                android:id="@+id/charger_type"
+                style="@style/TextExtraSmall_Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 Jenis Sakelar"
+                android:textColor="@color/textSecondary"
+                android:drawableStart="@drawable/ic_small_charger"
+                android:drawableTint="@color/textSecondary"
+                android:drawablePadding="2.5dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <LinearLayout
+                android:id="@+id/btn_reservation"
+                android:layout_width="16dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/btn_rounded_stroke_primary"
+                android:paddingVertical="16dp"
+                android:focusable="true"
+                android:clickable="true"
+                android:orientation="vertical"
+                android:layout_marginEnd="10dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_add_charging_station_filled"
+                    app:tint="@color/primary400"
+                    android:layout_marginBottom="6dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TextExtraSmall_Medium"
+                    android:textSize="10dp"
+                    android:textColor="@color/primary400"
+                    android:text="Reservasi"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btn_charging"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/btn_rounded_stroke"
+                android:paddingVertical="16dp"
+                android:focusable="true"
+                android:clickable="true"
+                android:orientation="vertical"
+                android:layout_marginEnd="10dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_charging_station"
+                    app:tint="@color/textSecondary"
+                    android:layout_marginBottom="6dp"/>
+
+                <TextView
+                    android:id="@+id/charger_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TextExtraSmall_Medium"
+                    android:textSize="10dp"
+                    android:textColor="@color/textSecondary"
+                    android:text="0/0"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btn_distance"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/btn_rounded_stroke"
+                android:paddingVertical="16dp"
+                android:focusable="true"
+                android:clickable="true"
+                android:orientation="vertical"
+                android:layout_marginEnd="10dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_car"
+                    app:tint="@color/textSecondary"
+                    android:layout_marginBottom="6dp"/>
+
+                <TextView
+                    android:id="@+id/distance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/TextExtraSmall_Medium"
+                    android:textSize="10dp"
+                    android:layout_marginHorizontal="8dp"
+                    android:textAlignment="center"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textColor="@color/textSecondary"
+                    android:text="0 km"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/btn_rounded_stroke"
+                android:paddingVertical="16dp"
+                android:focusable="true"
+                android:clickable="true"
+                android:orientation="vertical"
+                android:layout_marginEnd="10dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_time"
+                    app:tint="@color/textSecondary"
+                    android:layout_marginBottom="6dp"/>
+
+                <TextView
+                    android:id="@+id/duration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/TextExtraSmall_Medium"
+                    android:textSize="10dp"
+                    android:layout_marginHorizontal="8dp"
+                    android:textAlignment="center"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textColor="@color/textSecondary"
+                    android:text="0 min"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btn_detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/btn_rounded_stroke"
+                android:paddingVertical="16dp"
+                android:focusable="true"
+                android:clickable="true"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_detail"
+                    app:tint="@color/textSecondary"
+                    android:layout_marginBottom="6dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TextExtraSmall_Medium"
+                    android:textSize="10dp"
+                    android:textColor="@color/textSecondary"
+                    android:text="Detail"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/btn_focus"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:background="@drawable/btn_circle"
+        android:backgroundTint="@color/backgroundPrimary"
+        android:padding="8dp"
+        android:src="@drawable/ic_crosshair"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_container"
+        app:tint="@color/textSecondary" />
+
+    <ImageButton
+        android:id="@+id/btn_car_focus"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:background="@drawable/btn_circle"
+        android:backgroundTint="@color/backgroundPrimary"
+        android:padding="8dp"
+        android:src="@drawable/ic_car_filled"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_focus"
+        app:tint="@color/textSecondary" />
+
+    <TextView
+        style="@style/TextBase_SemiBold"
+        android:id="@+id/temperature"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:background="@drawable/bg_circle"
+        android:backgroundTint="@color/backgroundPrimary"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="30°"
+        android:textColor="@color/textSecondary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_car_focus" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_charger"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="16dp">
+
+    <EditText
+        android:id="@+id/et_charger_type"
+        style="@style/InputEditTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:inputType="text"
+        android:hint="Jenis Sakelar"
+        android:focusable="false"
+        android:background="@drawable/et_rounded_top_border"
+        android:textColorHint="@color/textSecondary"
+        android:drawableStart="@drawable/ic_charger"
+        android:drawableEnd="@drawable/ic_caret_down_filled"
+        android:drawableTint="@color/textSecondary" />
+
+    <EditText
+        android:id="@+id/et_charger_capacity"
+        style="@style/InputEditTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="Kapasitas Sakelar"
+        android:focusable="false"
+        android:enabled="false"
+        android:background="@drawable/et_square_border"
+        android:backgroundTint="@color/fillTertiary"
+        android:textColorHint="@color/textTertiary"
+        android:drawableStart="@drawable/ic_lightning"
+        android:drawableEnd="@drawable/ic_caret_down_filled"
+        android:drawableTint="@color/textTertiary"
+        android:layout_marginTop="-1dp"/>
+
+    <EditText
+        android:id="@+id/et_charger_total"
+        style="@style/InputEditTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:maxLength="2"
+        android:hint="Jumlah Unit"
+        android:enabled="false"
+        android:background="@drawable/et_rounded_bottom_border_selector"
+        android:backgroundTint="@color/fillTertiary"
+        android:textColorHint="@color/textTertiary"
+        android:drawableStart="@drawable/ic_list_number"
+        android:drawableTint="@color/textTertiary"
+        android:layout_marginTop="-1dp"/>
+
+</LinearLayout>
+
